@@ -1,0 +1,731 @@
+{
+  "dataset_info": {
+    "nombre": "Trámites Universitarios - Universidad del Cauca",
+    "fuente": "Acuerdo 002 de 1988 (Reglamento Estudiantil) y sus modificatorios, actualizado a 23 de enero de 2024",
+    "proposito": "Dataset para sistema de consultas (chatbot / buscador / RAG) sobre trámites académicos y administrativos estudiantiles",
+    "fecha_extraccion": "2026-08-27",
+    "total_registros": 24
+  },
+  "esquema": {
+    "id": "Identificador único del trámite (string, ej: TR-001)",
+    "tramite": "Nombre del trámite",
+    "categoria": "Clasificación temática (Inscripción, Admisión, Matrícula, Transferencia, Evaluación, Asistencia, Cancelación, Estímulos, Régimen Disciplinario, Casos Especiales)",
+    "descripcion": "Explicación breve en lenguaje natural del trámite",
+    "quien_puede_solicitarlo": "Perfil del solicitante (aspirante, estudiante regular, estudiante con matrícula condicional, etc.)",
+    "requisitos": "Lista de requisitos formales",
+    "procedimiento": "Pasos u órganos que intervienen en el trámite",
+    "responsable_entidad": "Dependencia competente para tramitarlo o resolverlo",
+    "plazos": "Términos, fechas o duraciones relevantes (si el reglamento los especifica)",
+    "documentos_requeridos": "Lista de soportes documentales exigidos",
+    "costos_o_excepciones": "Información sobre pagos, reembolsos, exenciones o gratuidad",
+    "sanciones_o_consecuencias": "Efectos de incumplir requisitos o plazos (si aplica)",
+    "base_normativa": "Artículos y acuerdos que sustentan el trámite",
+    "preguntas_frecuentes": "Lista de Q&A derivadas del texto",
+    "palabras_clave": "Términos para búsqueda / matching semántico",
+    "vigente": "Booleano - si la disposición sigue vigente o fue derogada/modificada",
+    "notas_actualizacion": "Aclaraciones sobre modificaciones posteriores"
+  },
+  "tramites": [
+    {
+      "id": "TR-001",
+      "tramite": "Inscripción a programa de pregrado",
+      "categoria": "Inscripción",
+      "descripcion": "Acto voluntario mediante el cual una persona manifiesta su interés en ingresar a un programa de pregrado de la Universidad del Cauca.",
+      "quien_puede_solicitarlo": "Bachilleres aspirantes a primer semestre o a semestres superiores (transferencia, normalistas, etc.)",
+      "requisitos": [
+        "Haber presentado el Examen de Estado ICFES Saber 11° con puntaje igual o superior al mínimo exigido",
+        "Acreditar condición de bachiller (diploma o acta de grado; convalidación si es título del exterior)",
+        "Realizar el registro en el aplicativo web de inscripción con información veraz",
+        "Pagar los derechos de inscripción",
+        "Cumplir requisitos adicionales según la modalidad (caso especial, transferencia, etc.)"
+      ],
+      "procedimiento": [
+        "Registro voluntario en el aplicativo web dentro de las fechas del calendario de admisión",
+        "Pago de los derechos de inscripción en entidad recaudadora autorizada",
+        "Verificación de la información por parte de la Universidad ante el ICFES"
+      ],
+      "responsable_entidad": "División de Admisiones, Registro y Control Académico",
+      "plazos": "Definidos en el calendario del proceso de admisión fijado por el Consejo Académico; mínimo dos convocatorias al año",
+      "documentos_requeridos": [
+        "Resultados ICFES Saber 11°",
+        "Diploma de bachiller o acta de grado",
+        "Comprobante de pago de inscripción"
+      ],
+      "costos_o_excepciones": "El valor de inscripción no es reembolsable, salvo que el programa no se desarrolle por causa imputable a la Universidad",
+      "sanciones_o_consecuencias": "Registrar información falsa o alterar resultados del ICFES genera pérdida del derecho de inscripción y admisión por 5 años",
+      "base_normativa": "Acuerdo Académico 013 de 2018, artículos 14, 19-26; Reglamento Estudiantil arts. 5-9",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Puedo inscribirme a más de un programa?", "respuesta": "Sí, hasta en dos programas de Pregrado-Popayán o dos de Regionalización, indicando orden de prioridad."},
+        {"pregunta": "¿Me devuelven el dinero si no quedo admitido?", "respuesta": "No, el valor de inscripción no es reembolsable salvo que la Universidad no abra el programa."}
+      ],
+      "palabras_clave": ["inscripción", "aspirante", "ICFES", "Saber 11", "registro web", "derechos de inscripción"],
+      "vigente": true,
+      "notas_actualizacion": "Regulado principalmente por el Acuerdo Académico 013 de 2018, que reemplazó el proceso previo del Acuerdo 002 de 1988"
+    },
+    {
+      "id": "TR-002",
+      "tramite": "Inscripción como caso especial de ingreso",
+      "categoria": "Casos Especiales",
+      "descripcion": "Modalidad de inscripción dirigida a bachilleres con condiciones especiales reconocidas por la ley (zonas sin IES, víctimas del conflicto, comunidades indígenas, afrodescendientes de la costa pacífica, zonas marginadas, San Andrés y Providencia).",
+      "quien_puede_solicitarlo": "Bachilleres que acrediten pertenecer a alguna de las categorías especiales definidas en el reglamento",
+      "requisitos": [
+        "Cumplir los requisitos generales de inscripción (artículo 20)",
+        "Certificación de estudio de los tres últimos años de bachillerato en la zona correspondiente",
+        "Documentación específica según la categoría (ej. Registro Único de Víctimas, certificación de cabildo indígena)"
+      ],
+      "procedimiento": [
+        "Presentar la documentación soporte ante la División de Admisiones dentro del calendario de admisión",
+        "La Universidad verifica autenticidad ante entidades como SNIES, Ministerio del Interior o Unidad de Víctimas",
+        "Asignación de un (1) cupo por programa según categoría"
+      ],
+      "responsable_entidad": "División de Admisiones, Registro y Control Académico; Comité de Admisiones para casos no previstos",
+      "plazos": "Dentro del calendario del proceso de admisión; documento de autoridad indígena no mayor a dos meses de expedición",
+      "documentos_requeridos": [
+        "Certificado de bachillerato en la zona/comunidad correspondiente",
+        "Certificación de autoridad competente (Alcaldía, Personería, Cabildo, Unidad de Víctimas, según el caso)"
+      ],
+      "costos_o_excepciones": "No exime del pago de derechos de inscripción",
+      "sanciones_o_consecuencias": "Si no se acredita el requisito o se vence el plazo, el aspirante queda inscrito como aspirante regular a primer semestre",
+      "base_normativa": "Acuerdo 086 de 2008, arts. 33-42; modificado por Acuerdo 016 de 2023 (víctimas del conflicto)",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Cuántos cupos especiales hay por programa?", "respuesta": "Generalmente un (1) cupo por programa y por categoría especial."},
+        {"pregunta": "¿Puedo usar dos beneficios de caso especial a la vez?", "respuesta": "No, solo se puede acceder a una modalidad de admisión especial."}
+      ],
+      "palabras_clave": ["caso especial", "cupo especial", "víctimas del conflicto", "indígena", "afrodescendiente", "zona marginada"],
+      "vigente": true,
+      "notas_actualizacion": "El numeral sobre víctimas del conflicto armado fue sustituido por el Acuerdo 016 de 2023"
+    },
+    {
+      "id": "TR-003",
+      "tramite": "Matrícula académica y financiera",
+      "categoria": "Matrícula",
+      "descripcion": "Acto que vincula al estudiante admitido con la Universidad, comprende una etapa académica (registro de asignaturas) y una financiera (pago o gratuidad).",
+      "quien_puede_solicitarlo": "Aspirantes admitidos y estudiantes que renuevan matrícula periodo a periodo",
+      "requisitos": [
+        "Haber sido admitido oficialmente o tener derecho a renovación",
+        "Diligenciar la pre-matrícula con las asignaturas a cursar",
+        "Estar a paz y salvo con las dependencias universitarias",
+        "Pago de derechos de matrícula (salvo beneficiarios de gratuidad, Ley 2155 de 2021)"
+      ],
+      "procedimiento": [
+        "Diligenciar pre-matrícula (se convierte en matrícula si no hay modificaciones)",
+        "Presentarse en fechas de matrícula ordinaria si hay cambios",
+        "Comprobar pago de derechos o certificación de gratuidad",
+        "Firma del Decano para dar vigencia a la matrícula"
+      ],
+      "responsable_entidad": "División de Admisiones, Registro y Control Académico; Decanatura de cada Facultad; Vicerrectoría Administrativa (gratuidad)",
+      "plazos": "Plazos ordinarios y extraordinarios fijados por el Consejo Académico cada período; la extraordinaria genera recargo económico",
+      "documentos_requeridos": [
+        "Formato de pre-matrícula firmado",
+        "Comprobante de pago o certificación de gratuidad",
+        "Paz y salvo general"
+      ],
+      "costos_o_excepciones": "Beneficiarios de la Política de Gratuidad (Ley 2155 de 2021) no pagan matrícula financiera; el Gobierno Nacional asume el costo",
+      "sanciones_o_consecuencias": "La Universidad se abstendrá de matricular a quien no esté a paz y salvo; matrícula obtenida con fraude es inválida y no genera reconocimiento académico",
+      "base_normativa": "Acuerdo 055 de 1991 (modifica Capítulo V del Acuerdo 002 de 1988); Acuerdo Superior 009 de 2022 (gratuidad)",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Qué pasa si no pago la matrícula a tiempo?", "respuesta": "Se aplica un recargo si se paga en plazo extraordinario; si no se matricula, se pierde la calidad de estudiante."},
+        {"pregunta": "¿Quién puede diligenciar mi matrícula si no estoy en la ciudad?", "respuesta": "Un tercero, con autorización escrita, excepto para primer semestre."}
+      ],
+      "palabras_clave": ["matrícula", "prematrícula", "gratuidad", "paz y salvo", "matrícula financiera", "matrícula académica"],
+      "vigente": true,
+      "notas_actualizacion": "Modificado varias veces por medidas transitorias COVID-19 (Acuerdos 036, 053, 057 de 2020-2021) y por la política de gratuidad de 2022"
+    },
+    {
+      "id": "TR-004",
+      "tramite": "Transferencia desde otra institución de educación superior",
+      "categoria": "Transferencia",
+      "descripcion": "Derecho a acreditar ante la Universidad del Cauca las materias cursadas y aprobadas en otra institución de educación superior para ingresar a semestres superiores al primero.",
+      "quien_puede_solicitarlo": "Estudiantes o egresados de otras IES reconocidas por el Estado",
+      "requisitos": [
+        "Haber presentado el examen de admisión de la Universidad del Cauca",
+        "Puntaje igual o superior al del último admitido a primer semestre en el programa",
+        "No haber perdido el derecho a continuar estudios en la institución de origen",
+        "Haber aprobado mínimo el 30% de créditos del plan de estudios de origen",
+        "Promedio aritmético no inferior a 3.5",
+        "No haber sido sancionado disciplinariamente en la institución de origen"
+      ],
+      "procedimiento": [
+        "Inscribirse y presentar prueba de admisión junto con aspirantes a primer semestre",
+        "Radicar solicitud de transferencia con documentación completa",
+        "Estudio del Comité de Coordinación Curricular",
+        "Aprobación por el Consejo de Facultad"
+      ],
+      "responsable_entidad": "Consejo de Facultad; Comité de Coordinación Curricular",
+      "plazos": "Fechas fijadas según el calendario de inscripciones de cada periodo académico",
+      "documentos_requeridos": [
+        "Formato de solicitud de transferencia",
+        "Constancia de inscripción y recibo de pago",
+        "Certificado de estudios con promedio, intensidad horaria y créditos",
+        "Certificado de no pérdida de derecho a continuar estudios y buena conducta",
+        "Plan de estudios y contenidos programáticos oficiales",
+        "Resultados ICFES, título de bachiller, foto 3x4"
+      ],
+      "costos_o_excepciones": "No se establece exención; sigue el régimen general de pago de matrícula",
+      "sanciones_o_consecuencias": "No procede transferencia de programas sin registro calificado (código SNIES) ni si el aspirante fue sancionado disciplinariamente en la institución de origen",
+      "base_normativa": "Acuerdo 086 de 2008, Capítulo IV, arts. 19-23",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Puedo transferirme si tengo promedio 3.2 en mi universidad anterior?", "respuesta": "No, se exige promedio aritmético mínimo de 3.5."},
+        {"pregunta": "¿Homologan automáticamente mis materias?", "respuesta": "No, el Consejo de Facultad decide previo estudio y puede exigir exámenes de validación."}
+      ],
+      "palabras_clave": ["transferencia", "homologación", "traslado universitario", "reconocimiento de créditos"],
+      "vigente": true,
+      "notas_actualizacion": "El Capítulo IV originario del Acuerdo 002/1988 fue derogado y reemplazado por el Acuerdo 086 de 2008"
+    },
+    {
+      "id": "TR-005",
+      "tramite": "Reserva de cupo por Servicio Militar Obligatorio",
+      "categoria": "Casos Especiales",
+      "descripcion": "Derecho del aspirante admitido a reservar su cupo hasta por un año cuando deba prestar el Servicio Militar Obligatorio durante el periodo en que fue admitido.",
+      "quien_puede_solicitarlo": "Aspirantes admitidos que deban prestar servicio militar",
+      "requisitos": [
+        "Haber sido admitido en el periodo académico correspondiente",
+        "Presentar solicitud escrita con documentos soporte antes del vencimiento del plazo de matrícula financiera"
+      ],
+      "procedimiento": [
+        "Radicar solicitud escrita ante la División de Admisiones, Registro y Control Académico",
+        "Adjuntar oficio de aceptación de reserva y certificado de prestación del servicio",
+        "Al finalizar el servicio, inscribirse nuevamente en las fechas del calendario de admisión"
+      ],
+      "responsable_entidad": "División de Admisiones, Registro y Control Académico",
+      "plazos": "Reserva válida hasta por un (1) año; solicitud antes del vencimiento del pago de matrícula financiera",
+      "documentos_requeridos": [
+        "Solicitud escrita",
+        "Documento soporte de citación o prestación del servicio militar",
+        "Certificado de prestación del servicio militar (al reingresar)"
+      ],
+      "costos_o_excepciones": "No implica costo adicional; es responsabilidad del aspirante ejercer el derecho reinscribiéndose a tiempo",
+      "sanciones_o_consecuencias": "Si no se reinscribe en el periodo autorizado, se pierde el derecho al cupo reservado",
+      "base_normativa": "Acuerdo 086 de 2008, Capítulo IX, art. 55; Reglamento Estudiantil numeral 14",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Por cuánto tiempo puedo reservar mi cupo?", "respuesta": "Hasta por un año, correspondiente al tiempo de prestación del servicio militar."}
+      ],
+      "palabras_clave": ["reserva de cupo", "servicio militar", "aplazamiento de matrícula"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-006",
+      "tramite": "Cancelación de matrícula (total)",
+      "categoria": "Cancelación",
+      "descripcion": "Solicitud del estudiante para retirarse de la Universidad durante un periodo académico, cancelando la totalidad de su matrícula.",
+      "quien_puede_solicitarlo": "Cualquier estudiante regular",
+      "requisitos": [
+        "Solicitud escrita al Decano de la Facultad exponiendo los motivos",
+        "Adjuntar paz y salvo general de la Universidad y carné estudiantil",
+        "Diligenciar previamente el cupón de 'Confirmación de la Intervención Psicosocial' ante Bienestar Universitario"
+      ],
+      "procedimiento": [
+        "Radicar solicitud escrita ante el Decano hasta el último día de clases del periodo",
+        "El Decano determina mediante resolución motivada la situación académica resultante (asignaturas aprobadas, perdidas o no cursadas)"
+      ],
+      "responsable_entidad": "Decanatura de la Facultad; División de Salud Integral (Vicerrectoría de Cultura y Bienestar)",
+      "plazos": "Hasta el último día de clases del periodo lectivo correspondiente",
+      "documentos_requeridos": [
+        "Solicitud escrita motivada",
+        "Paz y salvo general",
+        "Carné estudiantil",
+        "Cupón de confirmación de intervención psicosocial"
+      ],
+      "costos_o_excepciones": "El valor de la matrícula no es reembolsable salvo error en la liquidación o fuerza mayor comprobada previa al inicio de clases",
+      "sanciones_o_consecuencias": "Si el estudiante de primer semestre cancela o pierde más del 50% de asignaturas, debe someterse de nuevo al proceso de admisión",
+      "base_normativa": "Acuerdo 023 de 2008 (modificado por Acuerdo 029 de 2011), Capítulo VIII, arts. 1-4",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Me devuelven el dinero si cancelo la matrícula?", "respuesta": "No, salvo error en la liquidación o fuerza mayor debidamente comprobada y solicitada antes del inicio de clases."}
+      ],
+      "palabras_clave": ["cancelación de matrícula", "retiro", "paz y salvo", "intervención psicosocial"],
+      "vigente": true,
+      "notas_actualizacion": "Existieron suspensiones transitorias de requisitos durante la pandemia (Acuerdo 063 de 2020, Resolución Rectoral R-199 de 2021)"
+    },
+    {
+      "id": "TR-007",
+      "tramite": "Cancelación de una o varias asignaturas",
+      "categoria": "Cancelación",
+      "descripcion": "Solicitud para retirar formalmente una o varias asignaturas matriculadas antes de finalizar el periodo académico.",
+      "quien_puede_solicitarlo": "Estudiante regular, con restricciones si cursa la asignatura en calidad de repitente",
+      "requisitos": [
+        "No estar cursando la asignatura en calidad de repitente (salvo autorización especial del Consejo de Facultad por fuerza mayor)",
+        "No violar condiciones de correquisitos",
+        "Nota promedio igual o superior a 3.0"
+      ],
+      "procedimiento": [
+        "Solicitud escrita al Decano exponiendo motivos",
+        "Autorización del Decano antes de finalizar el periodo académico"
+      ],
+      "responsable_entidad": "Decanatura de la Facultad",
+      "plazos": "Antes de la terminación del periodo académico",
+      "documentos_requeridos": ["Solicitud escrita"],
+      "costos_o_excepciones": "No se especifica reembolso asociado a esta cancelación parcial",
+      "sanciones_o_consecuencias": "Si no se cancela formalmente y el estudiante se retira, se califica con 0.0 en exámenes no presentados",
+      "base_normativa": "Acuerdo 023 de 2008, art. 5; Reglamento Estudiantil numeral 15",
+      "preguntas_frecuentes": [],
+      "palabras_clave": ["cancelación de asignatura", "retiro de materia"],
+      "vigente": true,
+      "notas_actualizacion": "Sin cambios recientes reportados"
+    },
+    {
+      "id": "TR-008",
+      "tramite": "Examen de habilitación",
+      "categoria": "Evaluación",
+      "descripcion": "Examen al que tiene derecho el estudiante que obtuvo nota final entre 2.0 y menor a 3.0 en una asignatura.",
+      "quien_puede_solicitarlo": "Estudiante con nota final entre 2.0 (inclusive) y 3.0 (exclusive)",
+      "requisitos": [
+        "Que la asignatura no esté clasificada como inhabilitable por el Consejo de Facultad",
+        "Cancelación previa de los derechos económicos correspondientes ante la Decanatura"
+      ],
+      "procedimiento": [
+        "Verificar que la asignatura sea habilitable",
+        "Pagar derechos ante la Decanatura",
+        "Presentar el examen en fecha fijada"
+      ],
+      "responsable_entidad": "Decanatura de la Facultad; Consejo de Facultad (define asignaturas inhabilitables)",
+      "plazos": "No especificado explícitamente; sujeto al calendario académico de la Facultad",
+      "documentos_requeridos": ["Comprobante de pago de derechos de habilitación"],
+      "costos_o_excepciones": "Requiere pago previo de derechos económicos",
+      "sanciones_o_consecuencias": "Si no se presenta, la nota definitiva será la nota final obtenida antes de la habilitación",
+      "base_normativa": "Reglamento Estudiantil, arts. 46, 49, 61",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Todas las materias se pueden habilitar?", "respuesta": "No, el Consejo de Facultad define cuáles asignaturas son inhabilitables según su naturaleza y contenido."}
+      ],
+      "palabras_clave": ["examen de habilitación", "nota", "recuperación"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-009",
+      "tramite": "Examen de validación",
+      "categoria": "Evaluación",
+      "descripcion": "Examen que permite reconocer la aprobación de una asignatura cursada sin el lleno de todos los requisitos, en casos de transferencia, exceso de faltas de asistencia o cambio de programa dentro de la Universidad.",
+      "quien_puede_solicitarlo": "Estudiantes que provienen de otra institución, tienen faltas de asistencia superiores al 20% (con condiciones), o cambian de programa dentro de la Universidad",
+      "requisitos": [
+        "Nota previa igual o superior a 3.0 (para el caso de exceso de faltas)",
+        "Faltas totales no superiores al 30% de las clases programadas",
+        "Autorización del Decano"
+      ],
+      "procedimiento": [
+        "Solicitud ante el Decano",
+        "El Consejo de Facultad fija la modalidad del examen según la naturaleza de la asignatura"
+      ],
+      "responsable_entidad": "Decanatura; Consejo de Facultad",
+      "plazos": "No especifica plazo fijo; depende del caso (transferencia, cambio de programa, exceso de faltas)",
+      "documentos_requeridos": ["Solicitud", "Soportes según el caso (certificados de la institución de origen, etc.)"],
+      "costos_o_excepciones": "Requiere pago previo de derechos correspondientes",
+      "sanciones_o_consecuencias": "Si se pierde el examen de validación, la asignatura debe cursarse de nuevo en calidad de repitente",
+      "base_normativa": "Reglamento Estudiantil, art. 47",
+      "preguntas_frecuentes": [],
+      "palabras_clave": ["examen de validación", "reconocimiento de asignatura", "homologación interna"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-010",
+      "tramite": "Examen supletorio",
+      "categoria": "Evaluación",
+      "descripcion": "Examen que se presenta en fecha y hora diferentes a las señaladas oficialmente, por causa debidamente justificada.",
+      "quien_puede_solicitarlo": "Estudiante que no pudo presentar un examen parcial, final o de habilitación por causa justificada",
+      "requisitos": [
+        "Causa debidamente justificada",
+        "Solicitud presentada a más tardar 3 días hábiles después de la fecha del examen no presentado"
+      ],
+      "procedimiento": [
+        "Diligenciar solicitud ante el Decano con certificaciones y pruebas",
+        "Si es aprobada, el profesor realiza el examen en fecha y hora fijadas",
+        "Contra la decisión del Decano procede recurso de reposición dentro de 3 días"
+      ],
+      "responsable_entidad": "Decanatura de la Facultad",
+      "plazos": "Solicitud dentro de los 3 días hábiles siguientes al examen no presentado",
+      "documentos_requeridos": ["Solicitud escrita", "Certificaciones y pruebas de la causa justificada"],
+      "costos_o_excepciones": "No especificado",
+      "sanciones_o_consecuencias": "Sin solicitud oportuna, no hay derecho a examen supletorio y la inasistencia se califica como falta",
+      "base_normativa": "Reglamento Estudiantil, art. 51",
+      "preguntas_frecuentes": [],
+      "palabras_clave": ["examen supletorio", "justificación", "inasistencia a examen"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-011",
+      "tramite": "Reclamo o revisión de calificaciones",
+      "categoria": "Evaluación",
+      "descripcion": "Derecho del estudiante a solicitar corrección o revisión de una nota de examen dentro de un plazo determinado tras su publicación.",
+      "quien_puede_solicitarlo": "Cualquier estudiante inconforme con la calificación publicada",
+      "requisitos": [
+        "Presentar el reclamo dentro de los 3 días hábiles siguientes a la publicación de la nota",
+        "Solicitud motivada para pedir revisión por segundo calificador (exámenes escritos)"
+      ],
+      "procedimiento": [
+        "El profesor entrega notas a Secretaría Académica dentro de 5 días hábiles tras el examen",
+        "Publicación de notas",
+        "Estudiante presenta reclamo o corrección dentro de 3 días hábiles",
+        "El Decano puede conceder revisión por segundo calificador"
+      ],
+      "responsable_entidad": "Secretaría Académica; Decanatura",
+      "plazos": "3 días hábiles tras la publicación de notas para reclamar",
+      "documentos_requeridos": ["Solicitud motivada de revisión"],
+      "costos_o_excepciones": "No especificado",
+      "sanciones_o_consecuencias": "Vencido el término, las calificaciones quedan en firme y solo se corrigen por error aritmético o de transcripción",
+      "base_normativa": "Reglamento Estudiantil, arts. 58-59",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Puedo pedir revisión después de una semana?", "respuesta": "No, el plazo es de 3 días hábiles tras la publicación; después solo se corrigen errores aritméticos o de transcripción."}
+      ],
+      "palabras_clave": ["reclamo de nota", "revisión de examen", "segundo calificador"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-012",
+      "tramite": "Solicitud de estímulo académico (matrícula de honor / exoneración)",
+      "categoria": "Estímulos",
+      "descripcion": "Reconocimiento y exoneración de derechos de matrícula para estudiantes con los mejores promedios académicos de un periodo o carrera.",
+      "quien_puede_solicitarlo": "Estudiantes con los tres mejores promedios de un período académico o de carrera",
+      "requisitos": [
+        "Matrícula de honor: promedio igual o superior a 4.2, sin habilitar ni repetir asignaturas, con todas las asignaturas del periodo matriculadas",
+        "Segundo y tercer puesto: promedio no inferior a 4.0",
+        "Medalla Universidad del Cauca (fin de carrera): promedio igual o superior a 4.5, sin sanciones ni repitencias"
+      ],
+      "procedimiento": [
+        "La asignación es automática según los registros académicos de cada periodo",
+        "Se hace efectiva en el periodo académico siguiente"
+      ],
+      "responsable_entidad": "Facultad respectiva / Consejo Académico (medalla)",
+      "plazos": "Se otorga cada periodo académico; se hace efectivo en el semestre siguiente",
+      "documentos_requeridos": ["No requiere solicitud explícita; se basa en registros oficiales"],
+      "costos_o_excepciones": "Matrícula de honor: exoneración total de derechos básicos de matrícula. Segundo y tercer puesto: exoneración del 50%",
+      "sanciones_o_consecuencias": "No aplica a estudiantes en condición de egresados desarrollando trabajo de grado",
+      "base_normativa": "Acuerdo 085 de 2008 (sustituyó Capítulo X del Acuerdo 002 de 1988), arts. 7-12",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Si repito una asignatura pierdo la matrícula de honor?", "respuesta": "Sí, uno de los requisitos es no haber habilitado ni repetido ninguna asignatura en el periodo."}
+      ],
+      "palabras_clave": ["matrícula de honor", "medalla Universidad del Cauca", "estímulo académico", "exoneración de matrícula"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-013",
+      "tramite": "Proceso disciplinario estudiantil (descargos y sanción)",
+      "categoria": "Régimen Disciplinario",
+      "descripcion": "Procedimiento que se sigue cuando un estudiante incurre en una falta a sus deberes, garantizando el derecho de defensa antes de imponer una sanción.",
+      "quien_puede_solicitarlo": "Se inicia de oficio por el Decano al conocer una situación que pueda constituir falta; el estudiante tiene derecho a presentar descargos",
+      "requisitos": [
+        "Comunicación de cargos al estudiante dentro de los 15 días hábiles siguientes al conocimiento del hecho",
+        "El estudiante dispone de 5 días hábiles para formular descargos y solicitar pruebas"
+      ],
+      "procedimiento": [
+        "El Decano comunica los cargos y las pruebas existentes",
+        "El estudiante presenta descargos y pruebas (5 días hábiles)",
+        "Práctica de pruebas solicitadas (5 días hábiles siguientes)",
+        "Para amonestación privada, el Decano decide directamente; para sanciones mayores, remite al Consejo de Facultad",
+        "El Consejo de Facultad rinde concepto en 10 días hábiles; el Decano decide en los 3 días hábiles siguientes",
+        "Para expulsión, el asunto pasa al Rector, quien decide dentro de 30 días con concepto previo del Consejo Académico"
+      ],
+      "responsable_entidad": "Decanatura, Consejo de Facultad, Consejo Académico, Rectoría (según gravedad)",
+      "plazos": "15 días hábiles para formular cargos; 5 días para descargos; 5 días para pruebas; 10 días para concepto del Consejo de Facultad; 30 días para decisión de expulsión por el Rector",
+      "documentos_requeridos": ["Comunicación de cargos", "Descargos escritos", "Pruebas aportadas"],
+      "costos_o_excepciones": "No aplica",
+      "sanciones_o_consecuencias": [
+        "Retiro de clase o examen",
+        "Anulación del examen",
+        "Amonestación privada o pública",
+        "Cancelación de matrícula (parcial o total)",
+        "Aplazamiento de fecha de grado",
+        "Expulsión de la Universidad"
+      ],
+      "base_normativa": "Reglamento Estudiantil, Capítulo XI, arts. 85-95",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Puedo apelar una sanción de expulsión?", "respuesta": "Sí, procede recurso de apelación ante el Consejo Superior dentro de los 5 días hábiles siguientes a la notificación."},
+        {"pregunta": "¿Cuánto tiempo debo esperar para solicitar rehabilitación tras una expulsión?", "respuesta": "Mínimo cinco (5) años desde la imposición de la sanción."}
+      ],
+      "palabras_clave": ["régimen disciplinario", "sanción", "descargos", "expulsión", "amonestación", "recurso de apelación"],
+      "vigente": true,
+      "notas_actualizacion": "El deber de abstenerse de violencias basadas en género fue adicionado por el Acuerdo Superior 005 de 2023"
+    },
+    {
+      "id": "TR-014",
+      "tramite": "Solicitud de matrícula condicional (por bajo rendimiento académico)",
+      "categoria": "Cancelación",
+      "descripcion": "Situación en la que un estudiante que pierde una asignatura cursada por segunda vez en calidad de repitente puede continuar estudios bajo condición especial, en lugar de perder el cupo definitivamente.",
+      "quien_puede_solicitarlo": "Estudiante en bajo rendimiento académico sin sanciones disciplinarias",
+      "requisitos": [
+        "Haber perdido en forma definitiva una asignatura cursada como repitente por segunda vez",
+        "No haber sido sancionado disciplinariamente"
+      ],
+      "procedimiento": [
+        "Se determina automáticamente la condición según el registro académico",
+        "El estudiante con matrícula condicional solo puede matricular la asignatura pendiente (tercera vez) y las que deba repetir",
+        "Solo se permite estar en esta condición un máximo de dos ocasiones durante la carrera"
+      ],
+      "responsable_entidad": "Facultad / Consejo de Facultad",
+      "plazos": "Se aplica en el periodo académico inmediatamente siguiente a la pérdida definitiva de la asignatura",
+      "documentos_requeridos": ["No requiere solicitud explícita; se determina por registro académico"],
+      "costos_o_excepciones": "No se especifican exenciones asociadas",
+      "sanciones_o_consecuencias": "Si pierde la asignatura por tercera vez en matrícula condicional, pierde el derecho a continuar en el programa y debe someterse de nuevo al proceso de admisión, sin reconocimiento del registro académico anterior",
+      "base_normativa": "Acuerdo 023 de 2008, arts. 6-11",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Cuántas veces puedo tener matrícula condicional?", "respuesta": "Máximo dos ocasiones durante toda la carrera."}
+      ],
+      "palabras_clave": ["matrícula condicional", "bajo rendimiento académico", "repitencia", "pérdida de cupo"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-015",
+      "tramite": "Examen de clasificación",
+      "categoria": "Evaluación",
+      "descripcion": "Examen que permite a un estudiante ubicarse en un nivel diferente en asignaturas de idiomas, artes plásticas o música, cuando demuestra haber avanzado previamente en el dominio de la materia.",
+      "quien_puede_solicitarlo": "Estudiantes que acrediten, mediante documentación fehaciente, avance previo en idiomas, artes plásticas o música",
+      "requisitos": [
+        "Demostrar documentalmente el avance en el dominio de la asignatura",
+        "No haber perdido previamente la asignatura que se pretende clasificar",
+        "Solicitarlo en el momento de la matrícula"
+      ],
+      "procedimiento": [
+        "Solicitud sustentada ante el Consejo de Facultad",
+        "El examen lo aplica el profesor de la asignatura junto con un jurado del área nombrado por el Decano",
+        "Debe realizarse dentro de las dos primeras semanas de clase",
+        "La nota obtenida se registra como nota definitiva de la asignatura"
+      ],
+      "responsable_entidad": "Consejo de Facultad; Decanatura",
+      "plazos": "Solicitud en el momento de la matrícula; examen dentro de las dos primeras semanas de clase",
+      "documentos_requeridos": ["Documentación que acredite el nivel de avance en la asignatura"],
+      "costos_o_excepciones": "No especificado",
+      "sanciones_o_consecuencias": "No pueden optar a este examen los estudiantes que hayan perdido esa asignatura con anterioridad",
+      "base_normativa": "Reglamento Estudiantil, art. 52",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿En qué asignaturas puedo pedir examen de clasificación?", "respuesta": "Solo en áreas de idiomas, artes plásticas o música."}
+      ],
+      "palabras_clave": ["examen de clasificación", "nivelación", "idiomas", "artes", "música"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-016",
+      "tramite": "Examen preparatorio de grado",
+      "categoria": "Evaluación",
+      "descripcion": "Prueba de evaluación general de conocimientos teóricos y prácticos exigida en algunos programas como requisito para optar al título profesional.",
+      "quien_puede_solicitarlo": "Estudiantes próximos a graduarse en programas que exigen este requisito",
+      "requisitos": [
+        "Haber cumplido con los requisitos académicos previos que el programa establezca",
+        "Presentarse ante el jurado designado"
+      ],
+      "procedimiento": [
+        "Inscripción del examen según reglamentación interna de la Facultad",
+        "Presentación ante jurado",
+        "Calificación conforme a los criterios definidos por el Consejo de Facultad u organismo delegado"
+      ],
+      "responsable_entidad": "Consejo de Facultad u organismo delegatario de la unidad académica respectiva",
+      "plazos": "Definidos internamente por cada Facultad",
+      "documentos_requeridos": ["Certificación de cumplimiento de requisitos académicos previos"],
+      "costos_o_excepciones": "No especificado en el reglamento general; puede regirse por normas internas de cada Facultad",
+      "sanciones_o_consecuencias": "No se puede optar al título sin haber aprobado este examen en los programas que lo exigen",
+      "base_normativa": "Reglamento Estudiantil, art. 53",
+      "preguntas_frecuentes": [],
+      "palabras_clave": ["examen preparatorio", "requisito de grado", "título profesional"],
+      "vigente": true,
+      "notas_actualizacion": "Su reglamentación interna específica depende de cada Facultad"
+    },
+    {
+      "id": "TR-017",
+      "tramite": "Sustentación de trabajo de grado",
+      "categoria": "Evaluación",
+      "descripcion": "Examen oral ante un jurado de profesores sobre la monografía o trabajo terminal elaborado por el estudiante como requisito para obtener el título profesional.",
+      "quien_puede_solicitarlo": "Estudiantes que hayan culminado su trabajo de grado y cumplido los demás requisitos del plan de estudios",
+      "requisitos": [
+        "Haber aprobado todas las asignaturas y actividades del plan de estudios",
+        "Tener el trabajo de grado terminado y avalado para sustentación"
+      ],
+      "procedimiento": [
+        "Conformación de un jurado de profesores de la Facultad",
+        "Sustentación oral del trabajo de grado",
+        "Calificación: aprobado o reprobado (no numérica)"
+      ],
+      "responsable_entidad": "Jurado de profesores designado por la Facultad",
+      "plazos": "Si se reprueba, debe repetirse entre 90 y 180 días después; superado ese plazo sin presentar o aprobar, debe elaborarse un nuevo trabajo de grado",
+      "documentos_requeridos": ["Documento de trabajo de grado (monografía o trabajo terminal)"],
+      "costos_o_excepciones": "No especificado",
+      "sanciones_o_consecuencias": "Si se reprueba fuera del plazo de repetición, debe elaborarse un trabajo de grado completamente nuevo",
+      "base_normativa": "Reglamento Estudiantil, arts. 54-55",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Qué pasa si repruebo la sustentación de mi trabajo de grado?", "respuesta": "Debe repetirla entre 90 y 180 días después; si no lo hace o vuelve a reprobar, debe elaborar un nuevo trabajo de grado."}
+      ],
+      "palabras_clave": ["sustentación", "trabajo de grado", "monografía", "título profesional", "jurado"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-018",
+      "tramite": "Mención honorífica o calificación de laureado para trabajo de grado",
+      "categoria": "Estímulos",
+      "descripcion": "Distinción académica otorgada a trabajos de grado que se destacan por su calidad, otorgada por el Consejo de Facultad (mención honorífica) o el Consejo Académico (laureado).",
+      "quien_puede_solicitarlo": "Estudiantes cuyo trabajo de grado sea propuesto para esta distinción por el jurado o director",
+      "requisitos": ["Cumplir los criterios de calidad académica definidos en los acuerdos vigentes de cada Facultad"],
+      "procedimiento": ["Postulación del trabajo ante el Consejo de Facultad", "Evaluación y otorgamiento según normativa vigente; la calificación de laureado requiere aval del Consejo Académico"],
+      "responsable_entidad": "Consejo de Facultad; Consejo Académico (laureado)",
+      "plazos": "No especificado; sujeto a cronograma de grados de cada Facultad",
+      "documentos_requeridos": ["Trabajo de grado sustentado y aprobado"],
+      "costos_o_excepciones": "No implica costos ni exenciones automáticas",
+      "sanciones_o_consecuencias": "No aplica",
+      "base_normativa": "Reglamento Estudiantil, art. 12 (Capítulo II de Estímulos)",
+      "preguntas_frecuentes": [],
+      "palabras_clave": ["mención honorífica", "laureado", "distinción trabajo de grado"],
+      "vigente": true,
+      "notas_actualizacion": "El otorgamiento se rige por acuerdos internos vigentes de cada Facultad"
+    },
+    {
+      "id": "TR-019",
+      "tramite": "Exención de matrícula por estímulo deportivo o cultural",
+      "categoria": "Estímulos",
+      "descripcion": "Exoneración total o parcial del pago de derechos básicos de matrícula para estudiantes que representen a la Universidad y obtengan los primeros puestos en convocatorias culturales o deportivas oficiales.",
+      "quien_puede_solicitarlo": "Estudiantes regulares que representen oficialmente a la Universidad en eventos culturales o deportivos reconocidos (Coldeportes, federaciones, ASCUN, Ministerio de Educación)",
+      "requisitos": [
+        "Haber obtenido primer o segundo puesto en torneo o convocatoria de carácter zonal, nacional o internacional debidamente reconocida",
+        "Estar matriculado y con seguro estudiantil de accidentes vigente al momento de la representación"
+      ],
+      "procedimiento": [
+        "La Vicerrectoría de Cultura y Bienestar evalúa la seriedad y reconocimiento oficial del evento",
+        "Se verifica la representación mediante resolución de Representación Universitaria expedida por la Rectoría",
+        "Se aplica la exoneración correspondiente en el semestre siguiente"
+      ],
+      "responsable_entidad": "Vicerrectoría de Cultura y Bienestar; División de Patrimonio Cultural o de Recreación y Deportes",
+      "plazos": "La exoneración se hace efectiva en los semestres siguientes al logro, según el número de semestres definidos por nivel del torneo",
+      "documentos_requeridos": ["Certificado de asistencia/participación", "Resolución de Representación Universitaria"],
+      "costos_o_excepciones": "Exención del 100% durante 2-3 semestres según nivel (nacional/internacional) para el primer puesto; exenciones parciales para segundo puesto y torneos zonales",
+      "sanciones_o_consecuencias": "No aplica si no se cumple el requisito de matrícula vigente y seguro estudiantil",
+      "base_normativa": "Acuerdo 010 de 2013 (modifica art. 15 del Acuerdo 085 de 2008), Capítulo III",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Qué pasa si gano un torneo internacional?", "respuesta": "Se otorga exención del 100% de la matrícula durante tres semestres consecutivos."}
+      ],
+      "palabras_clave": ["estímulo deportivo", "estímulo cultural", "exoneración de matrícula", "representación universitaria"],
+      "vigente": true,
+      "notas_actualizacion": "El artículo 15 fue modificado por el Acuerdo 010 de 2013"
+    },
+    {
+      "id": "TR-020",
+      "tramite": "Exoneración de faltas de asistencia por representación estudiantil o universitaria",
+      "categoria": "Asistencia",
+      "descripcion": "Trámite para que no se contabilicen como faltas las ausencias de un estudiante que asiste a sesiones de corporaciones universitarias o representa a la Universidad en eventos académicos, deportivos o culturales.",
+      "quien_puede_solicitarlo": "Representantes estudiantiles elegidos ante corporaciones y órganos asesores; estudiantes autorizados para representar a la Universidad en eventos",
+      "requisitos": [
+        "Ser miembro activo de la corporación u órgano asesor, o estar autorizado por las Directivas Universitarias para representar a la Institución",
+        "Que la ausencia coincida con la fecha de la sesión o del evento"
+      ],
+      "procedimiento": [
+        "Presentar ante el Decano la certificación de asistencia a las sesiones (expedida por la Secretaría del organismo) o el certificado de asistencia al evento",
+        "Para eventos, se requiere la resolución de Representación Universitaria expedida por la Rectoría",
+        "El Decano realiza la exoneración (no contabilización de las faltas)"
+      ],
+      "responsable_entidad": "Decanatura de la Facultad",
+      "plazos": "No especificado explícitamente; debe tramitarse tras cada sesión o evento",
+      "documentos_requeridos": ["Certificación de asistencia a sesiones o eventos", "Resolución de Representación Universitaria (para eventos)"],
+      "costos_o_excepciones": "No aplica",
+      "sanciones_o_consecuencias": "Sin la certificación, las inasistencias se contabilizan como faltas normales",
+      "base_normativa": "Reglamento Estudiantil, arts. 64-65",
+      "preguntas_frecuentes": [],
+      "palabras_clave": ["exoneración de faltas", "representación estudiantil", "asistencia", "corporaciones universitarias"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-021",
+      "tramite": "Inscripción de bachilleres normalistas a semestres superiores",
+      "categoria": "Inscripción",
+      "descripcion": "Modalidad de inscripción dirigida a bachilleres normalistas que deseen ingresar a una licenciatura de la Facultad de Ciencias Naturales, Exactas y de la Educación, en el marco de un convenio vigente.",
+      "quien_puede_solicitarlo": "Bachilleres normalistas con convenio vigente entre su normal y la Universidad",
+      "requisitos": [
+        "Cumplir los requisitos generales de inscripción (artículo 20)",
+        "Cumplir los requisitos específicos del Acuerdo 013 de 2002 y convenios vigentes"
+      ],
+      "procedimiento": ["Inscripción en la modalidad correspondiente dentro del calendario de admisión", "Verificación del convenio vigente con la institución normalista de origen"],
+      "responsable_entidad": "División de Admisiones, Registro y Control Académico; Facultad de Ciencias Naturales, Exactas y de la Educación",
+      "plazos": "Según el calendario del proceso de admisión",
+      "documentos_requeridos": ["Título de normalista", "Documentación exigida por el convenio vigente"],
+      "costos_o_excepciones": "No especificado; sigue el régimen general de derechos de inscripción",
+      "sanciones_o_consecuencias": "No aplica si no hay convenio vigente con la institución de origen",
+      "base_normativa": "Acuerdo Académico 013 de 2018, art. 31; Acuerdo 013 de 2002",
+      "preguntas_frecuentes": [],
+      "palabras_clave": ["bachiller normalista", "licenciatura", "convenio", "inscripción semestre superior"],
+      "vigente": true,
+      "notas_actualizacion": "Aplica solo a licenciaturas con convenio vigente"
+    },
+    {
+      "id": "TR-022",
+      "tramite": "Inscripción a primer semestre con distinción Andrés Bello",
+      "categoria": "Casos Especiales",
+      "descripcion": "Modalidad de inscripción dirigida a bachilleres a quienes el ICFES otorgó la Distinción Andrés Bello (categoría nacional o departamental), con un cupo especial por programa.",
+      "quien_puede_solicitarlo": "Bachilleres distinguidos con la mención Andrés Bello en categoría nacional o departamental",
+      "requisitos": [
+        "Cumplir los requisitos generales de inscripción (artículo 20)",
+        "El ingreso solo puede usarse una vez y dentro de los dos años siguientes al otorgamiento de la distinción"
+      ],
+      "procedimiento": [
+        "Inscripción dentro del calendario de admisión indicando la distinción",
+        "La Universidad dispone de un (1) cupo por programa bajo esta modalidad",
+        "En caso de dos o más inscritos al mismo programa bajo esta modalidad, decide el Comité de Admisiones"
+      ],
+      "responsable_entidad": "División de Admisiones, Registro y Control Académico; Comité de Admisiones",
+      "plazos": "Debe usarse dentro de los dos años siguientes al otorgamiento de la distinción",
+      "documentos_requeridos": ["Certificado de la Distinción Andrés Bello expedido por el ICFES"],
+      "costos_o_excepciones": "La aceptación bajo esta modalidad no se sujeta al cupo máximo aprobado para el programa",
+      "sanciones_o_consecuencias": "No aplica si se usa el beneficio más de una vez o fuera del plazo de dos años",
+      "base_normativa": "Acuerdo Académico 013 de 2018, art. 32 y 45",
+      "preguntas_frecuentes": [],
+      "palabras_clave": ["distinción Andrés Bello", "cupo especial", "ICFES"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    },
+    {
+      "id": "TR-023",
+      "tramite": "Inscripción y admisión Sede Norte del Cauca (Acuerdo Superior 049 de 2022)",
+      "categoria": "Casos Especiales",
+      "descripcion": "Modalidad de inscripción y selección dirigida a bachilleres de los 13 municipios del Norte del Departamento del Cauca, con cupos diferenciados y criterios propios de selección.",
+      "quien_puede_solicitarlo": "Bachilleres que culminaron su educación media académica y/o técnica en instituciones de los 13 municipios del Norte del Cauca",
+      "requisitos": [
+        "Cumplir los requisitos generales de inscripción (artículo 20)",
+        "Presentar diploma de bachiller o acta de grado expedida por una institución de los 13 municipios del Norte del Cauca"
+      ],
+      "procedimiento": [
+        "Inscripción bajo esta modalidad específica dentro del calendario de admisión",
+        "Clasificación de aspirantes por cada uno de los 13 municipios",
+        "Asignación de admitidos en estricto orden de puntaje por municipio",
+        "Si no se cubren los cupos en Santander de Quilichao, se asignan mejores segundas y terceras posiciones hasta completar el 70% de los cupos"
+      ],
+      "responsable_entidad": "División de Admisiones, Registro y Control Académico",
+      "plazos": "Según el calendario del proceso de admisión",
+      "documentos_requeridos": ["Diploma de bachiller o acta de grado de institución del Norte del Cauca"],
+      "costos_o_excepciones": "No especificado; sigue el régimen general de derechos de inscripción y matrícula",
+      "sanciones_o_consecuencias": "El incumplimiento de requisitos implica que el aspirante se procese por el proceso general de admisión regular",
+      "base_normativa": "Acuerdo Académico 003 de 2023 (adiciona arts. 32A, 38A y 48A al Acuerdo Académico 013 de 2018); Acuerdo Superior 049 de 2022",
+      "preguntas_frecuentes": [
+        {"pregunta": "¿Qué pasa si no se llenan los cupos en Santander de Quilichao?", "respuesta": "Se asignan a las mejores segundas y, si es necesario, terceras posiciones entre todos los aspirantes de los 13 municipios, hasta completar el 70% de los cupos."}
+      ],
+      "palabras_clave": ["sede Norte del Cauca", "Santander de Quilichao", "cupo regional", "Acuerdo Superior 049"],
+      "vigente": true,
+      "notas_actualizacion": "Introducido por el Acuerdo Académico 003 del 1 de marzo de 2023"
+    },
+    {
+      "id": "TR-024",
+      "tramite": "Reconocimiento (homologación) de asignaturas cursadas en otro programa de la Universidad",
+      "categoria": "Transferencia",
+      "descripcion": "Solicitud de un estudiante que, antes de ingresar a un programa, cursó asignaturas en otro programa de la misma Universidad o en otra institución, para que le sean reconocidas.",
+      "quien_puede_solicitarlo": "Estudiante que haya cursado asignaturas afines en otro programa de la Universidad del Cauca o en otra IES reconocida por el ICFES",
+      "requisitos": [
+        "Que las asignaturas hayan sido aprobadas conforme a las normas de la institución donde se cursaron",
+        "Que el estudiante no haya sido sancionado académica o disciplinariamente en el programa de procedencia"
+      ],
+      "procedimiento": [
+        "Solicitud de reconocimiento ante la Facultad del nuevo programa",
+        "La Facultad evalúa si objetivos, contenidos e intensidad horaria son equivalentes",
+        "Si hay diferencias sustanciales, puede exigir exámenes de validación"
+      ],
+      "responsable_entidad": "Facultad del programa al que se solicita el reconocimiento",
+      "plazos": "No especificado explícitamente",
+      "documentos_requeridos": ["Certificado de estudios con notas, intensidad horaria y créditos de la asignatura cursada"],
+      "costos_o_excepciones": "No especificado",
+      "sanciones_o_consecuencias": "No se reconocen asignaturas de programas en los que el estudiante haya sido sancionado académica o disciplinariamente",
+      "base_normativa": "Reglamento Estudiantil, numeral 18 (Capítulo V, De la Matrícula)",
+      "preguntas_frecuentes": [],
+      "palabras_clave": ["homologación interna", "reconocimiento de asignaturas", "cambio de programa"],
+      "vigente": true,
+      "notas_actualizacion": "Sin modificaciones recientes reportadas"
+    }
+  ]
+}
