@@ -31,6 +31,7 @@ tamaño de datos:
    respetando el requisito de que "responda de manera correcta basado en
    el corpus", evitando alucinaciones.
 
+
 ## Arquitectura
 
 ```
