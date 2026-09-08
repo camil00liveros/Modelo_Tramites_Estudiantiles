@@ -33,6 +33,9 @@ tamaño de datos:
 
 ## Arquitectura
 
+
+
+
 ```
 dataset2.json
      │
