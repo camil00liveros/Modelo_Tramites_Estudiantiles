@@ -1,11 +1,9 @@
 # Asistente de Trámites — Universidad del Cauca
-
 Sistema de consulta en lenguaje natural sobre los trámites académicos y
 administrativos descritos en `data/dataset2.json` (24 trámites, estructura
 anidada con `requisitos`, `procedimiento`, `documentos_requeridos`, FAQs, etc.).
 
 ## Por qué RAG + fine-tuning y no un transformer entrenado desde cero
-
 Con 24 trámites y ~280 pares de entrenamiento derivables, **no es viable
 entrenar un transformer desde cero**: estos modelos necesitan típicamente
 millones de oraciones para aprender la estructura del lenguaje. Entrenar
