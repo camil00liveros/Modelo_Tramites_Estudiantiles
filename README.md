@@ -130,9 +130,6 @@ tramites_rag/
 ```
 
 ## Cómo ampliar esto a futuro
-
-
-
 - **Más datos**: si el reglamento crece o se agregan más FAQs reales, el
   fine-tuning mejora directamente (más pares de entrenamiento = mejor
   discriminación semántica).
