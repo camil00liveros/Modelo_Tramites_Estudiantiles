@@ -70,6 +70,7 @@ Esto mejora mucho la precisión de recuperación frente a preguntas puntuales
 ("¿qué documentos necesito para X?") en vez de mezclar todo el trámite en
 un solo vector genérico.
 
+
 ## Instalación
 
 ```bash
