@@ -14,6 +14,10 @@ ni siquiera domina la gramática básica del español.
 En su lugar, este proyecto usa dos técnicas que sí son apropiadas para este
 tamaño de datos:
 
+
+
+
+
 1. **Fine-tuning** (no entrenamiento desde cero) de un encoder de oraciones
    ya preentrenado en varios idiomas (`paraphrase-multilingual-MiniLM-L12-v2`).
    Solo se ajustan sus pesos para acercar semánticamente las preguntas del
